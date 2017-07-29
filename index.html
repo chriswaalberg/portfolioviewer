@@ -14,22 +14,23 @@
       <nav>
         <a href="#"><q42></q42></a>
         <ul>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Initiatieven</a></li>
-          <li><a href="#">Over Q42</a></li>
+          <li class="show-on-load"><a href="#">Portfolio</a></li>
+          <li class="show-on-load"><a href="#">Blog</a></li>
+          <li class="show-on-load"><a href="#">Initiatieven</a></li>
+          <li class="show-on-load"><a href="#">Over Q42</a></li>
         </ul>
       </nav>
 
       <section class="portfolio-viewer">
         <portfolio-item
-          v-for="item in portfolioItems"
+          v-for="(item, index) in portfolioItems"
           :item="item"
-          :key="item.id">
+          :key="index"
+          :class="{ 'show-on-load' : index === 0 }">
         </portfolio-item>
       </section>
 
-      <section class="company-description">
+      <section class="company-description show-on-load">
         <p>'Een technisch innovatief internetbureau', zeggen sommigen. 'Nerds', zeggen anderen. Wij zelf bijvoorbeeld, als we eerlijk zijn. We houden namelijk heel erg van goed programmeren.</p>
         <p>Maar dat is niet het hele verhaal. Techniek is pas interessant met mensen erbij. We vinden het daarom nog leuker om zo te programmeren dat ons werk niet alleen nuttig, maar ook vriendelijk is.</p>
       </section>
