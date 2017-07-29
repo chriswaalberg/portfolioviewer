@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Q42</title>
+    <link rel="stylesheet" href="css/index.min.css">
+    <script src="//unpkg.com/vue"></script>
+    <script src="//storage.googleapis.com/static.q42.nl/q42.js" async></script>
+  </head>
+  <body onload="document.body.classList.add('loaded');">
+
+    <section id="app">
+
+      <nav>
+        <a href="#"><q42></q42></a>
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Initiatieven</a></li>
+          <li><a href="#">Over Q42</a></li>
+        </ul>
+      </nav>
+
+      <section class="portfolio-viewer">
+        <portfolio-item
+          v-for="item in portfolioItems"
+          :item="item"
+          :key="item.id">
+        </portfolio-item>
+      </section>
+
+      <section class="company-description">
+        <p>'Een technisch innovatief internetbureau', zeggen sommigen. 'Nerds', zeggen anderen. Wij zelf bijvoorbeeld, als we eerlijk zijn. We houden namelijk heel erg van goed programmeren.</p>
+        <p>Maar dat is niet het hele verhaal. Techniek is pas interessant met mensen erbij. We vinden het daarom nog leuker om zo te programmeren dat ons werk niet alleen nuttig, maar ook vriendelijk is.</p>
+      </section>
+
+    </section>
+
+    <div class="loader la-ball-atom la-3x">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
